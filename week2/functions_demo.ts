@@ -1,0 +1,25 @@
+function greet(name: string): string {
+    return `Hola, ${name}!`;
+}
+
+function getMarks(marks: number=35): number{
+    return marks;
+}
+
+function sendAlert(phoneNumber: number, message?: string): void{
+    console.log(`Sending SMS to ${phoneNumber}...`);
+    if(message) console.log(`Content: ${message}`);
+}
+
+function calculateTotalRatings(...rating: number[]): number{
+    return rating.reduce((total,current)=>total + current,0);
+}
+
+console.log(greet("Saranya"));
+console.log(getMarks());
+console.log(getMarks(98));
+sendAlert(9182736450);
+sendAlert(9086753241, "Cyclone alert, take shelter!");
+
+const total=calculateTotalRatings(4,4.5,3,2,1,3.5);
+console.log(`Total Score: ${total}`);
