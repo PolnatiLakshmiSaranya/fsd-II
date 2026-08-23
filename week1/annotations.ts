@@ -1,6 +1,7 @@
 let movieTitle: string = "Interstellar";
 let releaseYear: number = 2014;
-let isSciFi: boolean = true;
+
+let isSciFi = true;
 
 function getMovieRelease(title: string, year: number): string {
     return `${title} is a movie released in ${year}.`;

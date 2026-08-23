@@ -1,6 +1,7 @@
 let userName: string = "Alice";
 let userAge: number =20;
-let isMember: boolean = true;
+let isMember = true;
+
 console.log("Data type of userName is --> "+typeof userName);
 console.log("Data type of userAge is --> "+typeof userAge);
 console.log("Data type of isMember is --> "+typeof isMember);
