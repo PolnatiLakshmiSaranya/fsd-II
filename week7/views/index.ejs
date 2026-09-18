@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f9;
+        }
+
+        .container {
+            width: 350px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px lightgray;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px 0;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .error {
+            color: red;
+            background: #ffe5e5;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .success {
+            color: green;
+            background: #e8ffe8;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        a {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1><%= title %></h1>
+
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <% if (success) { %>
+
+            <p class="success"><%= success %></p>
+
+            <h3>Welcome, <%= user %></h3>
+
+            <a href="/">Go Back</a>
+
+        <% } else { %>
+
+            <form action="/register" method="POST">
+
+                <label>Username</label>
+                <input type="text"
+                       name="username"
+                       minlength="3"
+                       required>
+
+                <label>Email</label>
+                <input type="email"
+                       name="email"
+                       required>
+
+                <label>Password</label>
+                <input type="password"
+                       name="password"
+                       minlength="6"
+                       required>
+
+                <label>Age</label>
+                <input type="number"
+                       name="age"
+                       min="18"
+                       required>
+
+                <button type="submit">Register</button>
+
+            </form>
+
+        <% } %>
+
+    </div>
+
+</body>
+
+</html>
